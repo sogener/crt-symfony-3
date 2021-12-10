@@ -13,9 +13,9 @@ ___
 
 docker pull sogener/crt-symfony-3_app_1 && docker pull sogener/crt-symfony-3_webapp_1 && docker pull sogener/crt-symfony-3_database_1
 
-бд: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_database_1
-nginx: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_webapp_1
-php: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_app_1 
+бд: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_database_1 <br>
+nginx: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_webapp_1 <br>
+php: https://hub.docker.com/repository/docker/sogener/crt-symfony-3_app_1 <br>
 
 
 ### Доступ в админку 
