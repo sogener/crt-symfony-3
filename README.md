@@ -8,3 +8,13 @@ ___
 ### Docker
 
 `docker-compose up -d`
+
+### Docker-hub 
+
+Добавлю через 15 минут :)
+
+
+### Доступ в админку 
+
+login: admin <br>
+password: admin
