@@ -3,7 +3,7 @@ ___
 
 ### Как использовать?
 
-1. cp .env.test .env
+`cp .env.test .env`
 
 ### Docker
 
