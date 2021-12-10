@@ -18,3 +18,6 @@ ___
 
 login: admin <br>
 password: admin
+
+### С чём возникли трудности?
+1. Не получилось вывести фотографию из директории `/public/uploads/images/article`
