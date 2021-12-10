@@ -54,7 +54,9 @@ RUN pecl update-channels && \
 RUN apk add gnu-libiconv --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 
-COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 RUN composer -V
 
 WORKDIR /var/www/app
