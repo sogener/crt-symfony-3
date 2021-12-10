@@ -8,3 +8,9 @@ ___
 ### Docker
 
 `docker-compose up -d`
+
+
+### Доступ в админку 
+
+login: admin
+password: admin
