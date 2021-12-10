@@ -39,7 +39,12 @@ class Comments
      * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="comment")
      */
     private $article;
-    
+
+    public function __toString(): string
+    {
+        return $this->title;
+    }
+
     /**
      * @return int|null
      */
