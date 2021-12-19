@@ -15,6 +15,15 @@
         <li>Название элемента - {{ newsDetail.title }}</li>
         <li>Текст - {{ newsDetail.description }}</li>
     </ul>
+    {% if newsDetail.isShow == true %}
+        <div class="news-submit__accepted">
+            Новость опубликована
+        </div>
+    {% else %}
+        <div class="news-submit">
+            <a href="{{ newsDetail.id }}/check">Отправить на проверку</a>
+        </div>
+    {% endif %}
     <div class="link-back">
         <a href="/">Вернуться назад</a>
     </div>
