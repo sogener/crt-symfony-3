@@ -13,20 +13,28 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <header>
-        {% block header %}
-            <div class="header">
-                <div class="header__title">crt-symfony3</div>
-                <div class="header__nav">
-                    <nav>
-                        <a href="{{ path('author') }}">Об авторе</a>
-                        <a href="{{ path('admin') }}">Админ панель</a>
-                        <a href="{{ path('index') }}">Статьи</a>
-                    </nav>
+    {% if header %}
+        <header>
+            {% block header %}
+                <div class="header">
+                    <div class="header__title">crt-symfony3</div>
+                    <div class="header__nav">
+                        <nav>
+                            {% for link in header %}
+                                <a href="{{ path(link.href) }}">{{ link.name }}</a>
+                            {% endfor %}
+                        </nav>
+                    </div>
+                    {% if time %}
+                        <div class="header__time">
+                            {{ time | format_datetime() }}
+                        </div>
+                    {% endif %}
+
                 </div>
-            </div>
-        {% endblock %}
-    </header>
+            {% endblock %}
+        </header>
+    {% endif %}
     <body>
         {% block body %}{% endblock %}
     </body>
