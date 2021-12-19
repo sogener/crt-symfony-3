@@ -33,7 +33,7 @@ class News
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private ?string $description;
+    private ?string $description = null;
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="news")
