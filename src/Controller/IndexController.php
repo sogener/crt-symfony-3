@@ -9,6 +9,8 @@ use App\Form\CommentType;
 use App\Repository\ArticleRepository;
 use App\Repository\CommentsRepository;
 use App\Repository\UserRepository;
+use App\Service\MessageInterface;
+use App\Service\RandomMessageGenerator;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -18,15 +20,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class IndexController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(ManagerRegistry $doctrine): Response
+    public function index(ManagerRegistry $doctrine, MessageInterface $messageGenerator): Response
     {
         $repository = $doctrine->getRepository(Article::class);
-
         $articles = $repository->findAll();
+
+        $dailyMessage = $messageGenerator->getRandomMessage();
 
         return $this->render('index/index.html.twig', [
             'heading' => 'Главная страница',
-            'articles' => $articles
+            'articles' => $articles,
+            'dailyMessage' => $dailyMessage
         ]);
     }
 
