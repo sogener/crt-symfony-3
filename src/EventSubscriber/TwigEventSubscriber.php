@@ -42,6 +42,7 @@ class TwigEventSubscriber implements EventSubscriberInterface
                 'name' => 'Статьи',
                 'href' => 'index',
                 'href' => 'index',
+                'href' => 'index',
                 'href' => 'index'
             ],
         ]);
